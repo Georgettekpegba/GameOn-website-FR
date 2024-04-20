@@ -52,15 +52,19 @@
         </button>
       </div>
 
+      <!-- section modal -->
       <div class="bground">
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
+
+            <!-- form -->
             <form
               name="reserve"
               action="index.html"
               method="get"
             >
+            <!-- last name -->
               <div
                 class="formData">
                 <label  >Prénom</label><br>
@@ -72,6 +76,8 @@
         
                 /><br>
               </div>
+
+              <!-- first name -->
               <div
                 class="formData">
                 <label>Nom</label><br>
@@ -82,6 +88,8 @@
                   name="last"
                 /><br>
               </div>
+
+              <!-- email -->
               <div
                 class="formData">
                 <label>E-mail</label><br>
@@ -92,6 +100,8 @@
                   name="email"
                 /><br>
               </div>
+
+              <!-- birth date -->
               <div
                 class="formData">
                 <label>Date de naissance</label><br>
@@ -102,12 +112,16 @@
                   name="birthdate"
                 /><br>
               </div>
+
+              <!--  nb de tournois -->
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+
+              <!-- display geographic location -->
               <div
                 class="formData">
                 <input
@@ -178,6 +192,7 @@
                 >
               </div>
 
+              <!-- Term of use -->
               <div
                 class="formData">
                 <input
@@ -208,12 +223,28 @@
           </div>
         </div>
       </div>
+
+       <!-- CONFIRMATION SUBMIT -->
+    <div class="container-confirmation-submit">
+      <div class="submitted-form">
+        <span class="close-modal-submit"></span>
+        <p>
+          Merci !
+          <br>
+          Votre réservation a été reçue.
+        </p>
+        <button id="close-btn-confirmation"> Fermer
+        </button>
+      </div>
+    </div>
     </main>
     <footer>
       <p class="copyrights">
         Copyright 2014 - 2022, GameOn Inc.
       </p>
     </footer>
-    <script src="modal.js"></script>
+    <script src="../starterOnly/main_js/modal.js"></script>
+    <script src="../starterOnly/main_js/formValidation.js" ></script>
+    <script src="../starterOnly/main_js/submit.js" ></script>
   </body>
 </html>
