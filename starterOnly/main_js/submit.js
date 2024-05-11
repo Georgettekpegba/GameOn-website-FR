@@ -1,28 +1,49 @@
-// dom variables
-const modalSumit = document.getElementsByClassName("container-confirmation-submit");
-const closeModalSubmit = document.getElementsByClassName("close-modal-submit");
+// DOM variables
+const modalSubmit = document.getElementsByClassName("container-confirmation-submit")[0];
+const closeModalSubmit = document.getElementsByClassName("close-modal-submit")[0];
 const closeBtnConfirmation = document.getElementById('close-btn-confirmation');
+let closeDialog = document.querySelector('closeDialog');
+let openDialog = document.querySelector('#openDialog');
+let submit = document.querySelector('thankModal');
 
-// submit event
-formSubmit.addEventListener("submit", validate);
 
-function displayModalSubmit() {
-    modalbg.style.display = 'none';
-    modalSubmit[0].style.display = 'block';
+
+//  thanks modal
+
+openDialog.addEventListener("click", () => {
+    dialog.show();
+});
+
+closeDialog.addEventListener("click", () => {
+    dialog.close();
+});
+
+// Function to display the confirmation modal
+function displayConfirmationModal() {
+    modalSubmit.style.display = 'block';
 }
 
+// Function to handle form submission
 function handleSubmission(event) {
     event.preventDefault();
-    if (form !== null) throw new Error("Form not found");
+    if (formSubmit === null) {
+        console.error("Form not found");
+        return;
+    }
 
-    if (validate()) {
-        closeModal();
-        alert("Merci pour votre participation !");
+    // Validate the form
+    const isValid = validate(event);
+
+    if (isValid) {
+        displayConfirmationModal();
+    } else {
+        console.error('Form validation failed.');
     }
 }
-// close submit
-function closeSubmit() {
-    modalSubmit[0].style.display = 'none';
+
+// Function to close the confirmation modal
+function closeConfirmationModal() {
+    modalSubmit.style.display = 'none';
     first.style.border = 'none';
     last.style.border = 'none';
     email.style.border = 'none';
@@ -30,6 +51,10 @@ function closeSubmit() {
     quantity.style.border = 'none';
 }
 
-closeModalSubmit[0].addEventListener('click', closeSubmit);
-closeBtnConfirmation.addEventListener('click', closeSubmit);
+formSubmit.addEventListener("submit", validate);
 
+
+closeModalSubmit.addEventListener('click', closeConfirmationModal);
+
+
+closeBtnConfirmation.addEventListener('click', closeConfirmationModal);

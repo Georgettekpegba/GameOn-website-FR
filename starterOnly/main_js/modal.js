@@ -4,8 +4,6 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close");
 
-
-
 // @eventlisteners all
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -20,7 +18,7 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 }
-
+// function navigation edition
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
