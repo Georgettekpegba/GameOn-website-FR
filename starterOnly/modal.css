@@ -1,3 +1,6 @@
+/* mettre le même css sur le remerciement que sur la modal */
+
+
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
@@ -204,7 +207,7 @@ input {
   margin: 0;
   padding: 8px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 8px;  
   font-size: 20px;
   height: 48px;
 }
@@ -486,6 +489,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 } 
+
 
 
 @media screen and (max-width: 800px) {

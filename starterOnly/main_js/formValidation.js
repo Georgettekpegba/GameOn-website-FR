@@ -167,7 +167,6 @@ function validate(event) {
 
         }
 
-
     });
 }
 
@@ -179,7 +178,24 @@ document.addEventListener("DOMContentLoaded", () => {
     closeButtons.forEach((button) => {
         button.addEventListener("click", () => {
             dialog.close();
+            // dialog.reset()
         });
     });
-});
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const closeButtons = dialog.querySelectorAll(
+            ".close-modal-submit, #close-btn-confirmation"
+        );
+
+        closeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                dialog.close();
+                const form = dialog.querySelector("form");
+                if (form) {
+                    form.reset();
+                }
+            });
+        });
+    })
+
+});
