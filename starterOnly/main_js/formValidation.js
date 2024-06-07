@@ -164,8 +164,22 @@ function validate(event) {
         if (nbError === 0) {
             closeModal()
             dialog.showModal();
+            resetForm()
 
         }
+    });
+}
+function resetForm() {
+    // reset reboucler tous les champs et remettre le contenue à vide
+    // erreur et contenue à false inehtml à strin() vide 
+    // inehtml= '' 
+    // setatribute ('')
+    formData.forEach(elementDiv => {
+        const inputEls = elementDiv.querySelectorAll("input");
+        const inputEl = inputEls[0];
+        inputEl.innerHTML = "";
+        elementDiv.setAttribute("data-error-visible", false);
+        elementDiv.setAttribute("data-error", "");
 
     });
 }
